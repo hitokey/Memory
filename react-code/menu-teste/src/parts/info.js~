@@ -1,0 +1,17 @@
+import {Container, Jumbotron} from "react-bootstap"
+
+
+const Info = ({values}) => {
+    return (
+	    <Container>
+	    { values.map((value) => (
+		    <Jumbotron fluid>
+		    <Container>
+		    <h1>{values.pag.title}</h1>
+		    <p>{values.pag.text}</p>
+		    </Container>
+		    </Jumbotron>
+	    ))}
+	    </Container>
+    )
+}

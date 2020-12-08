@@ -1,0 +1,96 @@
+[
+     {
+	"id": 1,
+	"cartas": {
+	    "id": 1,
+	    "width": "18rem",
+	    "lenght": "18rem",
+	    "location": "top",
+	    
+	    "img": {
+		"width": "20px",
+		"length": "20px",
+		"src": "apple.png"},
+	    "text": {
+		"principal": "apple",
+		"info": "text #id300",
+		"className": "list-group-flush"
+	    },
+	    "language":
+	    [{  "id": 2,
+		"origem": "ES",
+		"word": "manzana"
+		
+	     },
+	     {   "id": 3,
+		 "origem": "JP",
+		 "word": "ringo"
+		 
+	     }]
+	      
+	}
+     },
+     {
+	"id": 2,
+	"cartas": {
+	    "id": 1,
+	    "width": "18rem",
+	    "lenght": "18rem",
+	    "location": "top",
+	    
+	    "img": {
+		"width": "20px",
+		"length": "20px",
+		"src": "apple.png"},
+	    "text": {
+		"principal": "apple",
+		"info": "text #id301",
+		"className": "list-group-flush"
+	    },
+	    "language":
+	    [{  "id": 2,
+		"origem": "ES",
+		"word": "manzana"
+		
+	     },
+	     {   "id": 3,
+		 "origem": "JP",
+		 "word": "ringo"
+		 
+	     }]
+	      
+	}
+     },
+     {
+	"id": 3,
+	"cartas": {
+	    "id": 1,
+	    "width": "18rem",
+	    "lenght": "18rem",
+	    "location": "top",
+	    
+	    "img": {
+		"width": "20px",
+		"length": "20px",
+		"src": "apple.png"},
+	    "text": {
+		"principal": "apple",
+		"info": "text #id302",
+		"className": "list-group-flush"
+	    },
+	    "language":
+	    [{  "id": 2,
+		"origem": "ES",
+		"word": "manzana"
+		
+	     },
+	     {   "id": 3,
+		 "origem": "JP",
+		 "word": "ringo"
+		 
+	     }]
+	      
+	}
+    }
+    
+]

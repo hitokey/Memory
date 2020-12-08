@@ -1,0 +1,14 @@
+[
+    {
+	"id": 1,
+	"item": {
+	    "className": "d-block w-100",
+	    "nome": "Slider1",
+	    "width": "100px",
+	    "src": "cap.png",
+	    "title": "Ajusta",
+	    "text": "Aqui ficar o text",
+	}
+    },
+
+]

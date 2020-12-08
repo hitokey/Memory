@@ -1,0 +1,31 @@
+import {Container, Row, Col, Card} from "react-bootstap"
+
+
+const Cartas = ({values}) => {
+    return (
+	    <Container fluid = "sm">
+	    <Row><Col>
+	    { values.map((value) => (
+		    <Card key={value.card.id}
+		          style={{width: {value.card.width},
+				  lenght: {value.card.lenght}}}>
+		    <Card.Img variant={value.card.location}
+		              width={value.card.img.width}
+		              lenght={value.card.img.lenght}
+		              src={value.card.img.src}/>
+		    <Card.Body>
+		    <Card.Title>{value.card.text.principal}</Card.Title>
+		    <Card.Text>{value.card.text.info}</Card.Text>
+		    </Card.Body>
+		    <ListGroup className={value.card.text.list.class}>
+		    <ListGroupItem>{value.card.text.language.origem}:
+		                   {value.card.text.language.word}
+	            </ListGroupItem></ListGroup>
+		    <Card.Body>
+		    <Card.Link href="#editar?id={value.id}">Editar</Card.Link>
+		    <Card.Link href="#info?id={value.id}">Info</Card.Link>
+		    </Card.Body>
+		    </Card>))}
+	</Col><Row></Container>)
+};
+
