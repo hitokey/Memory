@@ -1,6 +1,6 @@
 import React from 'react'
 import {Nav, Navbar, Image} from 'react-bootstrap'
-import {Carousel, Container, Card} from 'react-bootstrap'
+
 
 
 const Menu = ({values}) => {
@@ -8,7 +8,6 @@ const Menu = ({values}) => {
 	    <div>
 	    { values.map((value) => (
 		    <div key={value.id}>
-		    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 		    <Navbar bg={value.menu.thema}
 	                    variant={value.menu.thema}>
 		    <Navbar.Brand href={value.menu.home.link}>
@@ -22,8 +21,9 @@ const Menu = ({values}) => {
 		    { value.menu.listName.map((ln) => (
 		      <Nav.Link key={ln.id} href={ln.link}>{ln.nome}</Nav.Link>))}
 	            </Nav>
-	        </Navbar>
-	        </div>
+	            </Navbar>
+	            </div>
+		    	    
 	    ))}
 	</div>
     )

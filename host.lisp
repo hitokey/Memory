@@ -2,6 +2,7 @@
 (require :hunchentoot-cgi)
 (require :easy-routes)
 (require :chunga)
+(require :cl-who)
 
 (defvar *acceptor* (make-instance 'hunchentoot:easy-acceptor
 				  :port 4242

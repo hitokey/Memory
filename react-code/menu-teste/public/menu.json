@@ -5,7 +5,7 @@
 	"menu": {
 	    "thema": "dark",
 	    "home" : {
-		"link": "#home",
+		"link": "/",
 		"nome": "Memory",
 		"ico": {
 		    "image" : "logo2.png",
@@ -18,22 +18,17 @@
 	    [
 		{   "id": 1,
 		    "nome": "Inicio",
-		    "link": "#home"
-		},
-		{
-		    "id": 2,
-		    "nome": "Sobre",
-		    "link": "#about"
+		    "link": "/"
 		},
 		{
 		    "id": 3,
 		    "nome": "FlashCard",
-		    "link": "#card"
+		    "link": "/flash"
 		},
 		{
 		    "id": 4,
 		    "nome": "Login",
-		    "link": "#login"
+		    "link": "/login"
 		}
 	    ]
 	    

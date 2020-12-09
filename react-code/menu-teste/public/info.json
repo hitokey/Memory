@@ -3,8 +3,8 @@
 	"id": 1,
 	"pag":
 	{
-	    "title": "Exemplos de FlashCards",
-	    "text": "Os FlashCards seram utilizados para lembramos dos texto apenas, um image."
+	    "title": "Exemplos de FlashCards:",
+	    "text": "O sistema a partir de um texto irá criar um sistema de cartas, aonde cartas possuirá um time de recordação, assim você utilizar-se do métodos MMBB (método de memorização na base binário), você não precisá se preocupa-se de quando o texto ou palavra teverá ser revisado."
 	}
     }
 ]

@@ -13,7 +13,7 @@
 		"src": "apple.png"},
 	    "text": {
 		"principal": "apple",
-		"info": "text #id300",
+		"info": "Yo como una manzana",
 		"className": "list-group-flush"
 	    },
 	    "language":
@@ -21,14 +21,13 @@
 		"origem": "ES",
 		"word": "manzana"
 		
-	     },
-	     {   "id": 3,
-		 "origem": "JP",
-		 "word": "ringo"
-		 
 	     }]
 	      
-	}
+	},
+	 "link" : {
+	     "edit": "#editar",
+	     "info": "#info"
+	 }
      },
      {
 	"id": 2,
@@ -44,22 +43,23 @@
 		"src": "apple.png"},
 	    "text": {
 		"principal": "apple",
-		"info": "text #id301",
+		"info": "Eu como uma maçã.",
 		"className": "list-group-flush"
 	    },
 	    "language":
 	    [{  "id": 2,
-		"origem": "ES",
-		"word": "manzana"
+		"origem": "PT_BR",
+		"word": "maçã"
 		
-	     },
-	     {   "id": 3,
-		 "origem": "JP",
-		 "word": "ringo"
-		 
 	     }]
+
 	      
-	}
+	},
+	 "link" : {
+	     "edit": "#editar",
+	     "info": "#info"
+	 }
+	 
      },
      {
 	"id": 3,
@@ -75,22 +75,23 @@
 		"src": "apple.png"},
 	    "text": {
 		"principal": "apple",
-		"info": "text #id302",
+		"info": "私はりんごをたべります。",
 		"className": "list-group-flush"
 	    },
 	    "language":
-	    [{  "id": 2,
-		"origem": "ES",
-		"word": "manzana"
-		
-	     },
+	    [
 	     {   "id": 3,
 		 "origem": "JP",
-		 "word": "ringo"
+		 "word": "りんご"
 		 
 	     }]
 	      
-	}
+	},
+	 "link" : {
+	     "edit": "#editar",
+	     "info": "#info"
+	 }
+	     
     }
     
 ]

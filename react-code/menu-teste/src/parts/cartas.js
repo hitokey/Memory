@@ -2,7 +2,7 @@ import {Container, Row, Col, Card, ListGroupItem, ListGroup } from 'react-bootst
 
 
 const Carts = ({values}) => {
-    return (
+    return (<div>
 	    <Container>
 	    <Row>
 	    { values.map((value) => (
@@ -30,7 +30,7 @@ const Carts = ({values}) => {
 		    </Card.Body>
 		    </Card></Col>
 	    ))}
-	</Row></Container>
+	</Row></Container></div>
     )
 };
 

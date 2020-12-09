@@ -1,0 +1,32 @@
+"use strict";
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactBootstrap = require("react-bootstrap");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function App() {
+  return /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, null, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Navbar, {
+    bg: "dark",
+    variant: "dark"
+  }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Navbar.Brand, {
+    href: "#home"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: "logo.png",
+    width: "30",
+    height: "30",
+    className: "d-inline-block align-top",
+    alt: "React Bootstrap logo"
+  }), ' '), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Nav, {
+    className: "mr-auto"
+  }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Nav.Link, {
+    href: "#home"
+  }, "Inicio"), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Nav.Link, {
+    href: "#about"
+  }, "Sobre"), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Nav.Link, {
+    href: "#card"
+  }, "Meus FlashCards"), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Nav.Link, {
+    href: "#login"
+  }, "Login")))));
+}
