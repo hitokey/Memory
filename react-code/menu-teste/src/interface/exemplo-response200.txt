@@ -1,0 +1,15 @@
+http://localhost:4000/users/authenticate POST JSON {"username: "test", "password": "test"}
+
+OK: response;
+{"id":1,"username":"test","firstName":"Test","lastName":"User"}
+
+OK: password errado;
+{
+    "message": "Username or password is incorrect"
+}
+
+OK: user errado;
+
+{
+    "message": "Username or password is incorrect"
+}

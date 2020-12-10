@@ -1,18 +1,24 @@
 import React from 'react';
-import Home from "./menu";
-import Flash from "./teste";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Home from './interface/menu';
+import Login from './interface/login';
+import Homepage from './interface/flash';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { PrivateRoute } from './utils/private';
 
-
-function App() {
-    return (
-	    <BrowserRouter>
-	       <Switch>
-                 <Route exact path="/"><Home /></Route>
-	         <Route path="/flash"><Flash /></Route>
-               </Switch>
-	    </BrowserRouter>
-    );
+class App extends React.Component {
+    render() {
+        return (
+		<div>
+		<Router>
+		<div>
+		<Route exact path="/" component={Home} />
+		<Route path="/login" component={Login} />
+		<PrivateRoute path="/flash" component={Homepage} />
+		</div>
+		</Router>
+		</div>
+	);
+    }
 }
 
 
