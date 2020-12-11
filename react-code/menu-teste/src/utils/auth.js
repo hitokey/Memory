@@ -1,4 +1,4 @@
-export function authGet(){
+export function authHead(){
     let user = JSON.parse(localStorage.getItem('user'));
     if (user && user.authdata) {
 	return { 'Authorization': 'Basic ' + user.authdata };

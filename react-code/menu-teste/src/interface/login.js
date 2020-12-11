@@ -2,7 +2,7 @@ import React from 'react';
 import { userService } from '../utils/services';
 import {Container} from 'react-bootstrap';
 import Menu from './parts/menu';
-
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
     constructor(props){
@@ -22,12 +22,12 @@ class Login extends React.Component {
 	this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount(){
-	fetch('http://localhost:3000/login.json')
+	userService.getLogin()
 	    .then(res => res.json())
 	    .then((data) =>
 		  { this.setState({ login: data })})
 	    .catch(console.log)
-	fetch('http://localhost:3000/menu.json')
+	userService.getMenu()
 	    .then(res => res.json())
 	    .then((data) =>
 		  { this.setState({ menu: data })})
@@ -93,7 +93,8 @@ class Login extends React.Component {
                     </div>
                     {error &&
                      <div className={'alert alert-danger'}>{error}</div>}
-                  </form>
+                </form><br></br>
+		<Link to="/register">Registar-se</Link>
 		</Container></div>);        
     }
 };

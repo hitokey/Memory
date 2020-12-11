@@ -3,6 +3,7 @@ import Menu from './parts/menu';
 import Slider from './parts/slider';
 import Info from './parts/info';
 import Carts from './parts/cartas';
+import { userService } from '../utils/services';
 
 class Home extends Component{
     render(){
@@ -20,31 +21,30 @@ class Home extends Component{
 	cards: [],
 	info1: [],
 	info2: [],
-    };
+    }
 
-    
     componentDidMount(){
-	fetch('http://localhost:3000/menu.json')
+	userService.getMenu()
 	    .then(res => res.json())
 	    .then((data) =>
 		  { this.setState({ menus: data })})
 	    .catch(console.log)
-	fetch('http://localhost:3000/slide.json')
+	userService.getSlide()
 	    .then(res => res.json())
 	    .then((data) =>
 		  { this.setState({ slider: data})})
 	    .catch(console.log)
-	fetch('http://localhost:3000/info.json')
+	userService.getInfoT()
 	    .then(res => res.json())
 	    .then((data) =>
 		  { this.setState({info1 : data})})
 	    .catch(console.log)
-	fetch('http://localhost:3000/card.json')
+	userService.getCard()
 	    .then(res => res.json())
 	    .then((data) =>
 		  { this.setState({cards: data})})
 	    .catch(console.log)
-	fetch('http://localhost:3000/info2.json')
+	userService.getInfoD()
 	    .then(res => res.json())
 	    .then((data) =>
 		  { this.setState({info2: data})})
