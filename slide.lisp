@@ -1,0 +1,6 @@
+(((ID . 1)
+  (ITEM (CLASS-NAME . d-block w-100) (NOME . Slider1) (WIDTH . 100px)
+   (SRC . cap.png) (TITLE . Ajusta) (TEXT . Aqui ficar o text é o teste)))
+ ((ID . 2)
+  (ITEM (CLASS-NAME . d-block w-100) (NOME . Slider2) (WIDTH . 100px)
+   (SRC . cap.png) (TITLE . title) (TEXT . Aqui fica outro text))))

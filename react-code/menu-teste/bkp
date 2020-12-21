@@ -1,0 +1,25 @@
+this.state.login.map((value) => {
+		<h2 className={value.title.className}>
+		{value.title.view}</h2>
+		{value.froms.map((vfrom) =>
+				 <form name="form" onSubmit={this.handleSubmit}>
+				 <div className={vfrom.className}>
+				 <label htmlFor={vfrom.forhtml}>{vfrom.view}</label>
+			         <input type={vfrom.type} className={vfrom.className}
+			         name={vfrom.name} value={this.state.username}
+				 onChange={this.handleChange}/>
+		                 {this.state.submitp && this.state.username &&
+			          <div className={vfrom.boxclass}>
+			          {vfrom.view + vfrom.errortxt}</div>}
+				 </div>
+				 </form>)}
+		<div className={value.button.divClass}>
+		<button className={value.button.className}
+	    disable={this.state.loadp}>
+                {value.button.view}</button>
+                {this.state.loadp &&
+		 <img src={value.button.load.src}/>}
+ 	    </div>
+		{this.state.error &&
+		 <div className={value.errorclass}>
+		 {this.state.error}</div>}})}

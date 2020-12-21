@@ -2,8 +2,8 @@
     "id": 1,
     "euser": "É necessário inserir um Usuário",
     "epass": "É necessário inserir uma Senha",
+    "eemail": "É necessário inserir um E-mail",
+    "enome": "É necessário inserir um Nome",
     "src": "image.gif",
     "alt": "loading..."
 }
-
-

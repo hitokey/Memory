@@ -1,16 +1,14 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import { userService } from '../utils/services';
-import {Container} from 'react-bootstrap';
 import Menu from './parts/menu';
-import { Link } from 'react-router-dom';
+import {Container} from 'react-bootstrap';
 
-class Login extends React.Component {
+class Del extends React.Component {
     constructor(props){
 	super(props);
-	
-	userService.logout();
-
 	this.state = {
+	    user: {},
 	    username: '',
 	    password: '',
 	    error: '',
@@ -38,7 +36,7 @@ class Login extends React.Component {
         }
 
         this.setState({ loading: true });
-        userService.login(this.state.username, this.state.password)
+        userService.deletar(this.state.username, this.state.password)
             .then(
                 user => {
                     const { from } = this.props.location.state || { from: { pathname: "/" } };
@@ -48,23 +46,24 @@ class Login extends React.Component {
             );
     }
     componentDidMount(){
-	userService.getLogin()
-	    .then(res => res.json())
-	    .then((data) =>
-		  { this.setState({ login: data })})
-	    .catch(console.log)
 	userService.getMenu()
 	    .then(res => res.json())
 	    .then((data) =>
 		  { this.setState({ menu: data })})
 	    .catch(console.log)
+	this.setState({ 
+            user: JSON.parse(localStorage.getItem('user'))
+	});
     }
     
     render() {
-	const { username, password, error, submitp, loadp,} = this.state;
+	const {user, username, password, error, submitp, loadp,} = this.state;
         return (<div>
 		<Menu values={this.state.menu}/>
 		<Container><br></br>
+		<h1>Deletar Usuário "{user.username}" </h1>
+		<p>Claro {user.nome} {user.sobrenome},
+		para deletar o seu usuário e usa senha corretamente:</p>
 		<form name="form" onSubmit={this.handleSubmit}>
                   <div className={'form-group' +
 				  (submitp && !username ? ' has-error' : '')}>
@@ -72,7 +71,7 @@ class Login extends React.Component {
                   <input type="text" className="form-control"
 	        name="username" value={username} onChange={this.handleChange} />
 		{submitp && !username &&
-                 <div className="help-block">Requer Usuário</div>}
+                 <div className="help-block">Requer UsuÃ¡rio</div>}
                 </div>
                 <div className={'form-group' +
 				(submitp && !password ? ' has-error' : '')}>
@@ -85,19 +84,19 @@ class Login extends React.Component {
                 </div>
                 <div className="form-group">
 		<button className="btn btn-primary"
-               	disabled={loadp}>Login</button>
+               	disabled={loadp}>Deletar</button>
                 {loadp &&
-                 <img src={ this.state.login.src } alt="loding..." />
+                 <img src="login.gif" alt="loding..." />
                 }
                 </div>
                 {error &&
                  <div className={'alert alert-danger'}>{error}</div>}
                 </form><br></br>
-		<Link to="/register">Registar-se</Link>
+		<Link to="/">Home</Link>
 		</Container></div>);
     }
 };
 
-export default Login;
+export default Del;
 
 

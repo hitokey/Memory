@@ -7,16 +7,13 @@ import { Link } from 'react-router-dom';
 class Login extends React.Component {
     constructor(props){
 	super(props);
-	
 	userService.logout();
-
 	this.state = {
 	    username: '',
 	    password: '',
 	    error: '',
 	    submitp: false,
 	    loadp: false,
-	    
 	    login: [],
 	    menu: []
 	};
@@ -24,22 +21,35 @@ class Login extends React.Component {
 	this.handleChange = this.handleChange.bind(this);
 	this.handleSubmit = this.handleSubmit.bind(this);
     }
+    componentDidMount(){
+///	userService.getLogin()
+///	    .then(res => res.json())
+//	    .then((data) =>
+//		  { this.setState({ login: data })})
+//	    .catch(console.log)
+	userService.getMenu()
+	    .then(res => res.json())
+	    .then((data) =>
+		  { this.setState({ menu: data })})
+	    .catch(console.log)
+    }
+
     handleChange(event) {
 	const { name, value } = event.target;
 	this.setState({ [name]: value});
     }
+
     handleSubmit(event) {
-        event.preventDefault();
+	event.preventDefault();
+	this.setState({ submitp: true });
 
-        this.setState({ submitted: true });
-	
-        if (!(this.state.username && this.state.password)) {
-            return;
-        }
+	if (!(this.state.username && this.state.password)){
+	    return;
+	}
 
-        this.setState({ loading: true });
-        userService.login(this.state.username, this.state.password)
-            .then(
+	this.setState({ loadp: true });
+	userService.login(this.state.username, this.state.password)
+	    .then(
                 user => {
                     const { from } = this.props.location.state || { from: { pathname: "/" } };
                     this.props.history.push(from);
@@ -47,21 +57,9 @@ class Login extends React.Component {
                 error => this.setState({ error, loadp: false })
             );
     }
-    componentDidMount(){
-	userService.getLogin()
-	    .then(res => res.json())
-	    .then((data) =>
-		  { this.setState({ login: data })})
-	    .catch(console.log)
-	userService.getMenu()
-	    .then(res => res.json())
-	    .then((data) =>
-		  { this.setState({ menu: data })})
-	    .catch(console.log)
-    }
     
     render() {
-	const { username, password, error, submitp, loadp,} = this.state;
+	const { username, password, submitp, loadp, error, login} = this.state;
         return (<div>
 		<Menu values={this.state.menu}/>
 		<Container><br></br>
@@ -72,7 +70,7 @@ class Login extends React.Component {
                   <input type="text" className="form-control"
 	        name="username" value={username} onChange={this.handleChange} />
 		{submitp && !username &&
-                 <div className="help-block">Requer Usuário</div>}
+                 <div className="help-block">{ login.euser }</div>}
                 </div>
                 <div className={'form-group' +
 				(submitp && !password ? ' has-error' : '')}>
@@ -80,14 +78,15 @@ class Login extends React.Component {
                 <input type="password" className="form-control" name="password"
 	        value={password} onChange={this.handleChange} />
                 {submitp && !password && 
-		 <div className="help-block">Requer Senha</div>}
+		 <div className="help-block">
+		 { this.state.login.epass }</div>}
 		
                 </div>
                 <div className="form-group">
 		<button className="btn btn-primary"
                	disabled={loadp}>Login</button>
                 {loadp &&
-                 <img src={ this.state.login.src } alt="loding..." />
+                 <img src={ this.state.login.src } />
                 }
                 </div>
                 {error &&

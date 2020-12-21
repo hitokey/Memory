@@ -12,8 +12,11 @@ export const userService = {
     getCard,
     getLangUser,
     getCardUser,
+    getInfoUser,
     getLogin,
     getReg,
+    handleResponse,
+//    deletar
     
 };
 
@@ -27,7 +30,7 @@ function handleResponse(response) {
 	if (!response.ok) {
 	    if (response.status === 401) {
 		logout();
-		//windows.location.reload(true);
+		//window.location.reload(true);
 	    }
 	    const error = (data && data.message) || response.statusText;
 	    return Promise.reject(error);
@@ -41,8 +44,17 @@ function getAllUser(){
 	method: 'GET',
 	headers: authHead()
     };
-    return fetch("http://localhost:4000/users",
+    return fetch("http://localhost:4242/users",
 		 requestOptions).then(handleResponse)}
+
+
+function getInfoUser(){
+    const requestOptions = {
+	method: 'GET',
+	headers: authHead()
+    };
+    return fetch("http://localhost:4242/system/infosUser", requestOptions)}
+	//.then(handleResponse)}
 
 
 function getMenu(){
@@ -82,7 +94,7 @@ function getCard(){
 	method: 'GET',
 	headers: authHead()
     };
-    return fetch("http://localhost:4242/system/cardexemplo", requestOptions)}
+    return fetch("http://localhost:4242/system/card", requestOptions)}
 
 
 function getLangUser(){
@@ -116,11 +128,11 @@ function getReg(){
     return fetch("http:localhost:4242/system/register", requestOptions)}
 
 
-function register(username,password,email,nome){
+function register(username,password,email,nome,sobre){
     const requestOptions = {
 	method: 'POST',
-	headers: { 'Content-Type': 'application/json' },
-	body: JSON.stringify({ username, password, email, nome })};
+	headers: {'Accept': 'application/json,text/json'},
+	body: JSON.stringify({ username, password, email, nome, sobre })};
 
     return fetch("http://localhost:4242/users/register", requestOptions)
 	.then(handleResponse)
@@ -137,7 +149,7 @@ function register(username,password,email,nome){
 function login(username,password) {
     const requestOptions = {
 	method: 'POST',
-	headers: { 'Content-Type': 'application/json' },
+	headers: {'Accept': 'application/json,text/json'},
 	body: JSON.stringify({ username, password })};
 
     return fetch("http://localhost:4242/users/authenticate", requestOptions)
@@ -150,3 +162,26 @@ function login(username,password) {
 	    return user;
 	});
 }
+
+function deletar(){
+    const requestOptions = {
+	method: 'GET',
+	headers: authHead()
+    };
+    return fetch("http://localhost:4242/system/head", requestOptions)}
+
+
+//function deletar(username,password) {
+//    let user = JSON.parse(localStorage.getItem('user'));
+ //   let key = user.authdata;
+ //   const requestOptions = {
+//	method: 'POST',/
+//	headers: {'Accept': 'application/json,text/json',
+//		  'Authorization': 'Basic ' + key }, 
+//	body: JSON.stringify({ username, password })}
+    
+//    return fetch("http://localhost:4242/users/autodelete", requestOptions)
+//	.then(handleResponse)
+//	.then(user => { logout(); } )
+//}
+
