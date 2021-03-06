@@ -6,14 +6,15 @@ Interligação dois host, React (NodeJs) com Hunchentoot (SBCL)
 
  - React:
 
- -- cd react/
- -- npm build 
- -- npm start
+cd react-code/menu-teste
+npm build 
+npm start
 
  - SBCL:
  
- -- (load #p"host.lisp")
- -- (start)
+(load #p"host.lisp")
+(start)
  
-Assim o hunchentoot ficará 127.0.0.1:4242 
-e NodeJS 127.0.0.1:4343.
+Assim o hunchentoot ficará http://127.0.0.1:4242 
+e NodeJS http://localhost:3000
+
