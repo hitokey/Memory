@@ -1,6 +1,6 @@
 # Memory System Web (SBCL+React)
 
-Interligação dois host, React (NodeJs) com Hunchentoot (SBCL)
+Interligado dois host, React (NodeJs) FrontEnd com Hunchentoot (SBCL) BackEnd.
 
 # Utilização.
 
@@ -13,8 +13,7 @@ $ npm start
 ```
 
 # SBCL:
- 
-1. 
+
 ```lisp
 * (load #p"host.lisp")
 * (hunchentoot:start *servidor*)
